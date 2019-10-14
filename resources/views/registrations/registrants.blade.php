@@ -37,6 +37,7 @@
             </table>
         </div>
 
+
 @stop
 
 
@@ -60,18 +61,24 @@
             });*/
 
             registrantsTable = $('#table_registrants').DataTable({
-                dom: "<'row'<'col-md-6 col-sm-12'l><'col-md-6 col-sm-12'f>r><'table-scrollable't><'row'<'col-md-5 col-sm-12'i><'col-md-7 col-sm-12'p>>",
+                dom: "<'row'<'col s12 l6'l><'col s12 l6' f>><rt><'row'<'col s12 l6'i><'col s12 l5'p><'col s12 l1'B>>",
+                buttons: [
+                    {
+                        extend: 'excel', className: '', text: 'Export Excel',
+                        filename: "Registrants List",
+                        exportOptions: {
+                            columns: [0, 1, 2, 3, 4, 5, 6, 7, 8]
+                        }
+                    },
+                ],
                 processing: true,
                 serverSide: true,
                 deferRender: true,
                 colReorder: true,
 
-                iDisplayLength: -1,
-                order: [1, 'desc'],
                 lengthMenu: [[10, 25, 50, 100, 200, 300, -1], [10, 25, 50, 100, 200, 300, "All"]],
-                iDisplayLength: 50,
+                iDisplayLength: 10,
                 order: [0, 'desc'],
-
 
                 ajax: {
                     url: '{!! route('registrants-ajax-data') !!}',

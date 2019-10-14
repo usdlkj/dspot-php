@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\RegistrationRequest;
+use App\Mail\RegistrationConfirmed;
+use App\Mail\RegistrationSubmitted;
 use App\Models\Organisation;
 use App\Models\Registration;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
 use Yajra\DataTables\DataTables;
 
@@ -64,6 +67,8 @@ class RegistrationController extends Controller {
         $registration->status = "unconfirmed";
 
         if ($registration->save()) {
+            Mail::to("dspot.id@gmail.com")->send(new RegistrationSubmitted($registration));
+
             return Redirect::route('registrations/complete')->with('success', "Registration Succeed");
         } else {
             return Redirect::back()->withInput()->withErrors("Failed save your input");
@@ -84,6 +89,8 @@ class RegistrationController extends Controller {
         $registration->status = "confirmed";
 
         if ($registration->save()) {
+            Mail::to($registration->email)->send(new RegistrationConfirmed($registration));
+
             return Redirect::route('registrants')->with('success', "Registration Confirmed");
         } else {
             return Redirect::back()->withInput()->withErrors("Failed save your input");

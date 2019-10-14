@@ -3,7 +3,6 @@
         $(".dropdown-trigger").dropdown();
 
         $('.sidenav').sidenav();
-        $('.parallax').parallax();
         $('.modal').modal();
 
     }); // end of document ready
