@@ -36,10 +36,7 @@
 
             </table>
         </div>
-
-
 @stop
-
 
 @section('js_custom_script')
     <script type="text/javascript">
@@ -61,7 +58,7 @@
             });*/
 
             registrantsTable = $('#table_registrants').DataTable({
-                dom: "<'row'<'col s12 l6'l><'col s12 l6' f>><rt><'row'<'col s12 l6'i><'col s12 l5'p><'col s12 l1'B>>",
+                dom: "<'row'<'col s12 l12' f>><rt><'row'<'col s2 l1'l><'col s4 l5'i><'col s5 l5'p> <'col s1 l1'B>>",
                 buttons: [
                     {
                         extend: 'excel', className: '', text: 'Export Excel',
@@ -77,12 +74,19 @@
                 colReorder: true,
 
                 lengthMenu: [[10, 25, 50, 100, 200, 300, -1], [10, 25, 50, 100, 200, 300, "All"]],
+                language: {
+                    "lengthMenu": "Show _MENU_"
+                },
                 iDisplayLength: 10,
                 order: [0, 'desc'],
 
                 ajax: {
                     url: '{!! route('registrants-ajax-data') !!}',
                     type: "POST",
+                },
+
+                initComplete: function(settings, json) {
+                    $('select').formSelect();
                 },
 
                 columns: [
