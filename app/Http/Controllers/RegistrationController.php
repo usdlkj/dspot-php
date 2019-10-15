@@ -67,7 +67,9 @@ class RegistrationController extends Controller {
         $registration->status = "unconfirmed";
 
         if ($registration->save()) {
-            Mail::to("dspot.id@gmail.com")->send(new RegistrationSubmitted($registration));
+            Mail::to($registration->email)
+                ->cc("dspot.id@gmail.com")
+                ->send(new RegistrationSubmitted($registration));
 
             return Redirect::route('registrations/complete')->with('success', "Registration Succeed");
         } else {

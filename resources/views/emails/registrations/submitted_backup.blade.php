@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>D-Spot Registration Received</title>
+    <title>DSpot Registration Submitted</title>
     <style>
         /* -------------------------------------
             GLOBAL RESETS
@@ -302,7 +302,7 @@
     </style>
 </head>
 <body class="">
-<span class="preheader">D-Spot Registration Received</span>
+<span class="preheader">Santa Dive Registration Confirmed</span>
 <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body">
     <tr>
         <td>&nbsp;</td>
@@ -317,39 +317,47 @@
                         <td class="wrapper">
                             <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                                 <tr>
-                                    <td align="center">
+                                    <td>
+                                        <p>Hi DSpot Admin</p>
 
-                                        <img src="{{asset('img/sulut_christmas_festival_2019.jpeg')}}" alt="logo" class="logo-default"><br /><br />
+                                        <p>Diver has registered: <br />
 
-                                        <p>Dear {{ $registration->first_name }} {{ $registration->last_name }}, </p><br />
+                                        First Name: {{ $registration->first_name }}<br />
+                                        Last Name: {{ $registration->last_name }}<br />
+                                        Email: {{ $registration->email }}<br />
+                                        Mobile Number: {{ $registration->mobile_number }}<br />
+                                        Dive Center: {{ $registration->dive_center }}<br />
+                                        Bank: {{ $registration->bank }}<br />
+                                        Transaction: {{ $registration->transaction_number }}</p>
+                                    </td>
 
-                                        <p>Thank you for your registration.</p>
-                                        <p>A Confirmation email will be sent to you shortly after we verify your payment.</p>
-                                        <p>See you in Menado!</p><br />
-
-
-                                        <p>Thank you,</p>
-                                        <p><a href="http://dspot.id" class="left brand-logo logo">
-                                                <img src="{{asset('img/small_white_dspot_title.jpeg')}}" alt="logo" class="logo-default">
-                                            </a>
-                                        </p>
-
-
-                                        {{--     <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Please confirm the registration payment by visiting this link:
+                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
                                             <tbody>
                                             <tr>
-                                                <td align="left">
+                                                <td align="center">
                                                     <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                                                         <tbody>
                                                         <tr>
-                                                            <td> <a href="http://htmlemail.io" target="_blank">Call To Action</a> </td>
+                                                            <td> <a href='{{route('registrations/confirm',$registration->id)}}'
+                                                                    class="btn-small waves-effect waves-light materialize-blue dark-5 confirm  btn-block" role="button">
+                                                                    Confirm
+                                                                </a>
+                                                            </td>
                                                         </tr>
                                                         </tbody>
                                                     </table>
                                                 </td>
                                             </tr>
                                             </tbody>
-                                        </table>--}}
+                                        </table>
+
+                                        You can see all registrants by clicking <a href='{{route('registrants')}}'
+                                                                     class="waves-effect waves-light materialize-blue dark-5"> here</a>.
+
                                     </td>
                                 </tr>
                             </table>
@@ -361,16 +369,16 @@
                 <!-- END CENTERED WHITE CONTAINER -->
 
                 <!-- START FOOTER -->
-             {{--   <div class="footer">
+                <div class="footer">
                     <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                         <tr>
                             <td class="content-block">
-                                <span class="apple-link">D-Spot.id</span>
+                                <span class="apple-link">DSpot.id</span>
                             </td>
                         </tr>
 
                     </table>
-                </div>--}}
+                </div>
                 <!-- END FOOTER -->
 
             </div>
@@ -380,4 +388,15 @@
 </table>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
 

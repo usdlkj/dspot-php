@@ -33,7 +33,7 @@ class RegistrationSubmitted extends Mailable
     public function build()
     {
         return $this->view('emails.registrations.submitted')
-            ->subject("D-Spot Registration Submitted");
+            ->subject("D-Spot Registration Received");
 
     }
 }
