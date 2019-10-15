@@ -87,6 +87,9 @@
 
                 initComplete: function(settings, json) {
                     $('select').formSelect();
+                    $(".confirm").on("click", function(){
+                        return confirm("Are you sure?");
+                    });
                 },
 
                 columns: [
