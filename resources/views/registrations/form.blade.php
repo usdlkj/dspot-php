@@ -53,12 +53,10 @@
 
         <div class="row">
             <div class="col s12 l12">
-                <p>Please transfer Rp.500.000 to D-Spot’s BCA Bank Account at XXXXXXXXXXXXX before proceeding</p>
+                <p>Please transfer Rp.500.000 to D-Spot’s BCA Bank Account at 4980170409 (Alvin Wijono) before proceeding</p>
             </div>
-
         </div>
-
-
+        
         <div class="row">
             <div class="input-field col s12 l6">
                 <i class="material-icons prefix materialize-blue text-dark-5">account_balance</i>
