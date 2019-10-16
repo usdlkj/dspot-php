@@ -26,9 +26,9 @@ class RegistrationRequest extends FormRequest
         return [
             'first_name' => 'required|max:70',
             'last_name' => 'required|max:70',
-            'email' => 'required|unique:registrations|max:70',
-            'mobile_number' => 'required|unique:registrations|max:20',
-            'dive_center' => 'required|max:100',
+            'email' => 'required|max:70',
+            'mobile_number' => 'required|max:20',
+            'dive_center' => 'max:150',
             'bank' => 'required|max:80',
             'transaction_number' => 'required|unique:registrations|max:50',
         ];

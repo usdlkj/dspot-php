@@ -46,7 +46,7 @@
                 <i class="material-icons prefix materialize-blue text-dark-5">explore</i>
                 <input id="dive_center" name="dive_center" type="text" class="validate @error('title') is-invalid @enderror"
                        value="{{ old('dive_center', isset($obj->dive_center) ? $obj->dive_center : null)  }}">
-                <label for="dive_center">Dive Center <span class="required"> * </span></label>
+                <label for="dive_center">Dive Center</label>
                 <span class="helper-text" data-error="Wrong Input" data-success="Correct">{{ $errors->first('dive_center', ':message') }}</span>
             </div>
         </div>
@@ -56,7 +56,7 @@
                 <p>Please transfer Rp.500.000 to D-Spot’s BCA Bank Account at 4980170409 (Alvin Wijono) before proceeding</p>
             </div>
         </div>
-        
+
         <div class="row">
             <div class="input-field col s12 l6">
                 <i class="material-icons prefix materialize-blue text-dark-5">account_balance</i>
